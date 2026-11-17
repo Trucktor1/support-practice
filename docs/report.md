@@ -1,5 +1,5 @@
 # Отчёт о реализации
-Проект создан с нуля 17 ноября 2026 года. Написаны спецификация, Java REST API, схема PostgreSQL, Kotlin-статистика, автоматические тесты, Docker и pipeline.
+Проект создан 14 ноября 2026 года. Написаны спецификация, Java REST API, схема PostgreSQL, Kotlin-статистика, автоматические тесты, Docker и pipeline.
 Java-контроллер ReportController вызывает Kotlin ReportService, который получает данные через Java ReportSource.
 1. Nullable Double? выражает отсутствие среднего времени решения. mapNotNull и безопасный вызов closedAt()?.let обрабатывают отсутствующие значения; takeIf предотвращает среднее пустой коллекции.
 2. Data class Summary описывает результат, операции filter/count/associateWith работают с одной выборкой. Все значения enum присутствуют даже при нулевом количестве.

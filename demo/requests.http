@@ -1,0 +1,41 @@
+@host = http://localhost:8080
+@id = 00000000-0000-0000-0000-000000000001
+
+### Categories
+GET {{host}}/api/categories
+
+### Create; replace id above with response id
+POST {{host}}/api/tickets
+Content-Type: application/json
+
+{"title":"Принтер","description":"Не печатает","categoryId":1,"priority":"HIGH","dueAt":"2027-01-01T00:00:00Z"}
+
+### Get
+GET {{host}}/api/tickets/{{id}}
+
+### Edit
+PUT {{host}}/api/tickets/{{id}}
+Content-Type: application/json
+
+{"description":"Проверить кабель","priority":"MEDIUM","dueAt":null}
+
+### Start
+PATCH {{host}}/api/tickets/{{id}}/status
+Content-Type: application/json
+
+{"status":"IN_PROGRESS"}
+
+### Resolve
+PATCH {{host}}/api/tickets/{{id}}/status
+Content-Type: application/json
+
+{"status":"RESOLVED"}
+
+### History
+GET {{host}}/api/tickets/{{id}}/history
+
+### Search
+GET {{host}}/api/tickets?status=NEW&priority=HIGH&page=0&size=20
+
+### Summary
+GET {{host}}/api/reports/summary?from=2026-01-01T00:00:00Z&to=2027-01-01T00:00:00Z

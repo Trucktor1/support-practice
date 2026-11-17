@@ -1,0 +1,10 @@
+.gradle/
+build/
+.idea/
+*.iml
+.env
+backups/
+.kotlin/
+.current-image
+.rollback-image
+*.log
